@@ -63,11 +63,17 @@ A consumer-facing web directory that maps local delivery restaurants to their mu
 
 ## 6. Git Collaboration Workflow (CRITICAL)
 
-* **Branching:** The `main` branch is protected. All feature work must be done on separate branches and submitted via Pull Request.
+To ensure smooth collaboration and safe integrations over our 2-week timeline, we will use an **Integration Branch Strategy**:
+
+* **The Environments:**
+  * `main`: The protected production branch.
+  * `staging` (or `feat/test`): The shared integration branch. All completed features are merged here for testing before they touch `main`.
+* **Branching:** All feature work must be done on separate branches created from `staging` (e.g., `feat/backend-api`, `feat/directory-ui`) and submitted via Pull Request to `staging`.
 * **Switching Branches:** Use `git checkout <branch-name>` to switch between tasks or restore files from the commit history.
 * **Fetching Updates:** Use `git fetch origin` to retrieve updates from the remote repository without merging them into the local branch, ensuring the working directory remains unaffected.
-* **Merging Changes:** Use `git pull origin main` to fetch and integrate changes from the remote repository into the current branch in one step. Note that this can lead to merge conflicts if there are conflicting changes between the local and remote branches.
+* **Merging Changes:** Use `git pull origin staging` to fetch and integrate changes from the remote repository into the current branch in one step. Note that this can lead to merge conflicts if there are conflicting changes between the local and remote branches.
 * **Integrating Feature Branches:** Use `git merge <branch-name>` to integrate changes from one branch into another, combining the commit histories.
-* **Rebasing (Advanced):** Use `git rebase main` on your feature branch to reapply commits on top of the base branch, creating a clean, linear history. Warning: Rebase rewrites commit history and should be used carefully with shared branches.
+* **Rebasing (Advanced):** Use `git rebase staging` on your feature branch to reapply commits on top of the base branch, creating a clean, linear history. *Warning: Rebase rewrites commit history and should be used carefully with shared branches.*
 * **Undoing Changes:** Use `git reset (--soft, --mixed, or --hard)` to move the current branch to a specific commit and manage changes in the staging area or working directory.
-* **Documentation:** We will use this README file to provide documentation for the repository.
+* **Final Merge:** Once all features are successfully integrated and tested in the `staging` branch, a final PR will merge `staging` into `main`. Empty dangling branches can then be deleted.
+* **Documentation:** We will use this REQUIREMENTS file to provide documentation for the repository.
