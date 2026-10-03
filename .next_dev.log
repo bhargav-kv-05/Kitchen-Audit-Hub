@@ -1,0 +1,14 @@
+
+> kitchen-audit-hub@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.8 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.137.143:3000
+- Environments: .env.local
+✓ Ready in 328ms
+✓ Running next.config.ts took 88ms
+
+ GET /api/seed 200 in 1348ms (next.js: 351ms, application-code: 998ms)
+ GET /api/restaurants 200 in 92ms (next.js: 65ms, application-code: 27ms)
+ GET /api/restaurants/6ac0c6546b7c571eb2d91300 200 in 690ms (next.js: 642ms, application-code: 48ms)
