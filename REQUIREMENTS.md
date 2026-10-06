@@ -59,7 +59,7 @@ A consumer-facing web directory that maps local delivery restaurants to their mu
 * **Backend & DB (Lead Backend Developer):** Design schemas, build API routes, handle database queries.
 * **Frontend UI (Member 2):** Use v0.dev to generate Tailwind components for the Directory, Cards, and Badges.
 * **Frontend Integration (Member 3):** Connect the v0 static components to the Next.js API endpoints to render live data.
-* **Data & Presentation (Member 4):** Generate realistic JSON mock data for restaurants/scores and produce the final AI-generated pitch video.
+* **Data, AI & Presentation (Member 4):** Generate realistic JSON mock data for risk prediction scores, write prompts for the Groq AI LLM explanations, and produce the final AI-generated pitch video.
 
 ## 6. Git Collaboration Workflow (CRITICAL)
 
