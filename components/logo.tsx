@@ -27,7 +27,7 @@ export function Logo({ collapsed = false }: { collapsed?: boolean }) {
           <span className="font-heading text-[15px] font-extrabold tracking-tight text-foreground">
             KITCHEN AUDIT HUB
           </span>
-          <span className="truncate text-[11px] font-medium text-muted-foreground">
+          <span className="text-[10px] leading-[1.1] text-muted-foreground text-wrap pr-2">
             {'Food Safety • Hygiene • Compliance'}
           </span>
         </span>

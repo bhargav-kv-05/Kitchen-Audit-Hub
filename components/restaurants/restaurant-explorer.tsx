@@ -1,13 +1,13 @@
 'use client'
 
-import { useDeferredValue, useMemo, useState } from 'react'
+import { useDeferredValue, useMemo, useState, useEffect } from 'react'
 import { RotateCcw, SearchX } from 'lucide-react'
 import { SearchBar } from '@/components/search-bar'
 import { FilterSelect } from '@/components/filter-select'
 import { RestaurantCard } from '@/components/restaurant-card'
 import { EmptyState } from '@/components/empty-state'
 import { Button } from '@/components/ui/button'
-import { restaurants } from '@/lib/restaurants'
+import type { Restaurant } from '@/lib/types'
 import {
   CUISINE_OPTIONS,
   DEFAULT_FILTERS,
@@ -22,9 +22,27 @@ import {
 } from '@/lib/filters'
 
 export function RestaurantExplorer({ initialQuery = '' }: { initialQuery?: string }) {
+  const [dbRestaurants, setDbRestaurants] = useState<Restaurant[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    async function loadRestaurants() {
+      try {
+        const res = await fetch('/api/restaurants')
+        const data = await res.json()
+        setDbRestaurants(data)
+      } catch (err) {
+        console.error("Failed to load restaurants:", err)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    loadRestaurants()
+  }, [])
+
   const [filters, setFilters] = useState<Filters>({ ...DEFAULT_FILTERS, query: initialQuery })
   const deferred = useDeferredValue(filters)
-  const results = useMemo(() => applyFilters(restaurants, deferred), [deferred])
+  const results = useMemo(() => applyFilters(dbRestaurants, deferred), [deferred, dbRestaurants])
   const activeCount = activeFilterCount(filters) + (filters.query ? 1 : 0)
 
   const set = <K extends keyof Filters>(key: K) => (value: Filters[K]) => setFilters((f) => ({ ...f, [key]: value }))
@@ -50,7 +68,7 @@ export function RestaurantExplorer({ initialQuery = '' }: { initialQuery?: strin
 
       <div className="flex items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground" aria-live="polite">
-          Showing <span className="font-semibold text-foreground">{results.length}</span> of {restaurants.length} restaurants
+          Showing <span className="font-semibold text-foreground">{results.length}</span> of {dbRestaurants.length} restaurants
         </p>
         {activeCount > 0 && (
           <Button variant="ghost" size="sm" onClick={reset}>

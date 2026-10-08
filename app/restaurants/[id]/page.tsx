@@ -5,7 +5,10 @@ import { HealthSection } from '@/components/restaurant-detail/health-section'
 import { InspectionHistory } from '@/components/restaurant-detail/inspection-history'
 import { ViolationsList } from '@/components/restaurant-detail/violations-list'
 import { RestaurantCard } from '@/components/restaurant-card'
-import { getRestaurant, restaurants } from '@/lib/restaurants'
+import { restaurants } from '@/lib/restaurants'
+import connectToDatabase from '@/lib/mongodb'
+import RestaurantModel from '@/models/Restaurant'
+import { Sparkles } from 'lucide-react'
 
 type Props = { params: Promise<{ id: string }> }
 
@@ -15,7 +18,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params
-  const r = getRestaurant(id)
+  await connectToDatabase()
+  const r = await RestaurantModel.findOne({ id }).lean() as any
   if (!r) return { title: 'Restaurant not found' }
   return {
     title: `${r.name} · Grade ${r.grade === 'FAILED' ? 'F' : r.grade}`,
@@ -23,10 +27,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+async function getAiExplanation(id: string) {
+  try {
+    const res = await fetch(`http://localhost:3000/api/restaurants/${id}/explain`, { cache: 'no-store' });
+    const data = await res.json();
+    return data.explanation;
+  } catch (e) {
+    return "AI Summary is temporarily unavailable.";
+  }
+}
+
 export default async function RestaurantDetailPage({ params }: Props) {
   const { id } = await params
-  const restaurant = getRestaurant(id)
+  
+  await connectToDatabase()
+  const restaurant = await RestaurantModel.findOne({ id }).lean() as any
+  
   if (!restaurant) notFound()
+  
+  const aiSummary = await getAiExplanation(id)
 
   const similar = restaurants
     .filter((r) => r.id !== restaurant.id && (r.cuisine === restaurant.cuisine || r.locality === restaurant.locality))
@@ -35,6 +54,17 @@ export default async function RestaurantDetailPage({ params }: Props) {
   return (
     <div className="flex flex-col gap-8">
       <DetailHero restaurant={restaurant} />
+      
+      <section className="rounded-3xl border border-border bg-card p-6 shadow-sm">
+        <div className="flex items-center gap-2 mb-3">
+          <Sparkles className="size-5 text-primary" />
+          <h2 className="text-xl font-bold">AI Health Summary</h2>
+        </div>
+        <p className="text-muted-foreground leading-relaxed">
+          {aiSummary}
+        </p>
+      </section>
+
       <HealthSection restaurant={restaurant} />
       <div className="grid gap-8 xl:grid-cols-[1.4fr_1fr]">
         <InspectionHistory history={restaurant.inspectionHistory} />
