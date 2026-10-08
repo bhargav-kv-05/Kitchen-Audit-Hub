@@ -17,22 +17,16 @@ export async function GET(
   try {
     const { id } = await params;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-      return NextResponse.json({ error: 'Invalid Restaurant ID' }, { status: 400 });
-    }
-
     await connectToDatabase();
     
     // Fetch records to feed to the LLM (RAG context)
-    const restaurant = await Restaurant.findById(id).lean();
+    const restaurant = await Restaurant.findOne({ id }).lean();
     if (!restaurant) {
       return NextResponse.json({ error: 'Restaurant not found' }, { status: 404 });
     }
     
-    const inspections = await InspectionRecord.find({ restaurantId: id })
-      .sort({ inspectionDate: -1 })
-      .limit(3) // Only feed the last 3 to keep the LLM fast and cheap
-      .lean();
+    // Use the embedded inspection history (only first 3)
+    const inspections = (restaurant.inspectionHistory || []).slice(0, 3);
 
     // The base prompt that Member 4 will dial in later
     const prompt = `

@@ -4,9 +4,9 @@
 
 ▲ Next.js 16.3.8 (Turbopack)
 - Local:         http://localhost:3000
-- Network:       http://10.187.129.180:3000
+- Network:       http://192.168.1.9:3000
 - Environments: .env.local
-✓ Ready in 312ms
-✓ Running next.config.ts took 65ms
+✓ Ready in 337ms
+✓ Running next.config.ts took 801ms
 
- GET /api/restaurants/6ac4c0988f8b757839ec6ed4/explain 200 in 4.2s (next.js: 1055ms, application-code: 3.1s)
+ GET /api/seed 200 in 1338ms (next.js: 268ms, application-code: 1070ms)
