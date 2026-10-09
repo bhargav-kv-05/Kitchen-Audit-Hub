@@ -29,11 +29,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function getAiExplanation(id: string) {
   try {
-    const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+    let baseUrl = 'http://localhost:3000';
+    
+    if (process.env.VERCEL_URL) {
+      // If the user pasted the full URL including https://, just use it
+      if (process.env.VERCEL_URL.startsWith('http')) {
+        baseUrl = process.env.VERCEL_URL.replace(/\/$/, ''); // remove trailing slash if any
+      } else {
+        // Otherwise, Vercel's default system variable doesn't have https://
+        baseUrl = `https://${process.env.VERCEL_URL}`;
+      }
+    }
+
     const res = await fetch(`${baseUrl}/api/restaurants/${id}/explain`, { cache: 'no-store' });
     const data = await res.json();
     return data.explanation;
   } catch (e) {
+    console.error("Fetch AI Error:", e);
     return "AI Summary is temporarily unavailable.";
   }
 }
