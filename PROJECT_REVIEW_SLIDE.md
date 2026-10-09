@@ -26,7 +26,7 @@ Currently, official inspection reports are buried in dense government portals, h
 A consumer-facing web directory ("Food Safety Discovery Engine") that successfully translates dense municipal inspection reports into clear grades, scores, and AI summaries, empowering users to make informed, safe dining choices.
 
 **Team Contributions:** 
-- **Member 1 (Bhargav):** Designed MongoDB schemas and built Next.js REST API routes.
+- **Member 1 (Bhargav):** Designed MongoDB schemas and built Next.js REST API routes and managed the Git workflow.
 - **Member 2 (Sanjana):** Frontend UI design and Tailwind component generation (via v0).
-- **Member 3 (Praneeth):** Connected static UI components to live database endpoints and managed the Git workflow.
-- **Member 4 (Haseeba):** Generated mock data, engineering the Groq AI prompts, and handling the final AI pitch presentation.
+- **Member 3 (Praneeth):** Connected static UI components to live database endpoints.
+- **Member 4 (Haseeba):** Generated mock data, engineering the Groq AI prompts.
