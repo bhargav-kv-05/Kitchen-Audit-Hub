@@ -29,7 +29,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function getAiExplanation(id: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/restaurants/${id}/explain`, { cache: 'no-store' });
+    const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+    const res = await fetch(`${baseUrl}/api/restaurants/${id}/explain`, { cache: 'no-store' });
     const data = await res.json();
     return data.explanation;
   } catch (e) {
