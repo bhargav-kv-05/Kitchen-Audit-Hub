@@ -9,6 +9,7 @@ import { restaurants } from '@/lib/restaurants'
 import connectToDatabase from '@/lib/mongodb'
 import RestaurantModel from '@/models/Restaurant'
 import { Sparkles } from 'lucide-react'
+import Groq from 'groq-sdk'
 
 type Props = { params: Promise<{ id: string }> }
 
@@ -27,25 +28,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-async function getAiExplanation(id: string) {
+async function getAiExplanation(restaurant: any) {
+  if (!process.env.GROQ_API_KEY) return "AI Summary is temporarily unavailable (Missing API Key).";
+  
   try {
-    let baseUrl = 'http://localhost:3000';
+    const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+    const inspections = (restaurant.inspectionHistory || []).slice(0, 3);
+    const prompt = `
+      You are a food safety expert. Explain the following restaurant inspection data to a normal user in 2 simple sentences. 
+      Restaurant: ${restaurant.name}
+      Recent Inspections: ${JSON.stringify(inspections)}
+    `;
     
-    if (process.env.VERCEL_URL) {
-      // If the user pasted the full URL including https://, just use it
-      if (process.env.VERCEL_URL.startsWith('http')) {
-        baseUrl = process.env.VERCEL_URL.replace(/\/$/, ''); // remove trailing slash if any
-      } else {
-        // Otherwise, Vercel's default system variable doesn't have https://
-        baseUrl = `https://${process.env.VERCEL_URL}`;
-      }
-    }
-
-    const res = await fetch(`${baseUrl}/api/restaurants/${id}/explain`, { cache: 'no-store' });
-    const data = await res.json();
-    return data.explanation;
+    const completion = await groq.chat.completions.create({
+      messages: [{ role: "user", content: prompt }],
+      model: "qwen/qwen3.8-27b",
+    });
+    
+    return completion.choices[0]?.message?.content || "No explanation available.";
   } catch (e) {
-    console.error("Fetch AI Error:", e);
+    console.error("Groq generation error:", e);
     return "AI Summary is temporarily unavailable.";
   }
 }
@@ -58,7 +60,7 @@ export default async function RestaurantDetailPage({ params }: Props) {
   
   if (!restaurant) notFound()
   
-  const aiSummary = await getAiExplanation(id)
+  const aiSummary = await getAiExplanation(restaurant)
 
   const similar = restaurants
     .filter((r) => r.id !== restaurant.id && (r.cuisine === restaurant.cuisine || r.locality === restaurant.locality))
