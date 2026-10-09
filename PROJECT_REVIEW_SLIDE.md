@@ -3,7 +3,8 @@
 **Project Title:** Kitchen Audit Hub
 
 **Problem Statement:** 
-Solves the problem of hidden back-of-house hygiene on food delivery apps. Official inspection reports are often buried in dense government portals. We make this data transparent and accessible so diners can choose where to eat with confidence.
+"Why can't consumers see verified kitchen safety standards on food delivery apps?" 
+Currently, official inspection reports are buried in dense government portals, hiding back-of-house hygiene from the public. Kitchen Audit Hub makes this data transparent and accessible so consumers can choose where to order food with confidence.
 
 **Tech Stack:** 
 - **Frontend:** Next.js (React), Tailwind CSS (v0.dev)
