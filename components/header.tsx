@@ -1,16 +1,50 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { Bell, ChevronDown, MapPin, Menu, PanelLeftClose, PanelLeftOpen } from 'lucide-react'
+import { Bell, Check, ChevronDown, MapPin, Menu, PanelLeftClose, PanelLeftOpen } from 'lucide-react'
 import { toast } from 'sonner'
 import { SearchBar } from '@/components/search-bar'
 import { LOCALITIES } from '@/lib/restaurants'
 import { cn } from '@/lib/utils'
 
-const NOTIFICATIONS = [
-  { id: 1, title: 'New inspection: The Healthy Table', body: 'Scored 99% — Grade A', time: '2d ago' },
-  { id: 2, title: 'Critical alert: Street Wok', body: 'Failed complaint inspection', time: '2w ago' },
-  { id: 3, title: 'Bistro Étoile re-inspected', body: 'Maintained Grade A (96%)', time: '5d ago' },
+const INITIAL_NOTIFICATIONS = [
+  {
+    id: 1,
+    title: 'Critical Alert: Street Wok Express',
+    body: 'Failed hygiene audit (56%) in Gachibowli — Urgent corrective action ordered',
+    time: '2h ago',
+    href: '/restaurants/street-wok-express-gachibowli',
+    unread: true,
+    tone: 'text-grade-f',
+  },
+  {
+    id: 2,
+    title: 'Top Hygiene Rating: Conçu Patisserie',
+    body: 'Scored 99% (Grade A) in Jubilee Hills — Exemplary cold-chain standards',
+    time: '1d ago',
+    href: '/restaurants/concu-jubilee-hills',
+    unread: true,
+    tone: 'text-grade-a',
+  },
+  {
+    id: 3,
+    title: 'Inspection Notice: Shah Ghouse',
+    body: 'Scored 76% (Grade C) — Conditional pass with sanitation improvement notice',
+    time: '2d ago',
+    href: '/restaurants/shah-ghouse-gachibowli',
+    unread: true,
+    tone: 'text-grade-c',
+  },
+  {
+    id: 4,
+    title: 'Audit Verified: Tatva Fine Dining',
+    body: 'Maintained Grade A (98%) in Jubilee Hills — Zero food safety citations',
+    time: '3d ago',
+    href: '/restaurants/tatva-jubilee-hills',
+    unread: false,
+    tone: 'text-grade-a',
+  },
 ]
 
 interface HeaderProps {
@@ -22,7 +56,15 @@ interface HeaderProps {
 export function Header({ collapsed, onToggleCollapse, onOpenMobile }: HeaderProps) {
   const [location, setLocation] = useState('Hyderabad')
   const [notifOpen, setNotifOpen] = useState(false)
+  const [notifications, setNotifications] = useState(INITIAL_NOTIFICATIONS)
   const notifRef = useRef<HTMLDivElement>(null)
+
+  const unreadCount = notifications.filter((n) => n.unread).length
+
+  const markAllAsRead = () => {
+    setNotifications((prev) => prev.map((n) => ({ ...n, unread: false })))
+    toast.success('All notifications marked as read')
+  }
 
   useEffect(() => {
     if (!notifOpen) return
@@ -91,19 +133,49 @@ export function Header({ collapsed, onToggleCollapse, onOpenMobile }: HeaderProp
               onClick={() => setNotifOpen((o) => !o)}
             >
               <Bell className="size-[18px]" aria-hidden="true" />
-              <span className="absolute top-2 right-2.5 size-2 rounded-full bg-grade-f ring-2 ring-card" />
-              <span className="sr-only">Notifications, 3 new</span>
+              {unreadCount > 0 && (
+                <span className="absolute top-2 right-2.5 size-2 rounded-full bg-grade-f ring-2 ring-card" />
+              )}
+              <span className="sr-only">Notifications, {unreadCount} unread</span>
             </button>
             {notifOpen && (
-              <div className="absolute right-0 mt-2 w-80 max-w-[calc(100vw-2rem)] origin-top-right animate-in fade-in zoom-in-95 rounded-2xl border border-border bg-popover p-2 shadow-xl">
-                <p className="px-3 pt-2 pb-1 text-sm font-semibold">Notifications</p>
-                <ul>
-                  {NOTIFICATIONS.map((n) => (
-                    <li key={n.id} className="rounded-xl px-3 py-2.5 hover:bg-muted">
-                      <p className="text-sm font-medium">{n.title}</p>
-                      <p className="text-xs text-muted-foreground">
-                        {n.body} · {n.time}
-                      </p>
+              <div className="absolute right-0 mt-2 w-88 max-w-[calc(100vw-2rem)] origin-top-right animate-in fade-in zoom-in-95 rounded-2xl border border-border bg-popover p-2 shadow-xl">
+                <div className="flex items-center justify-between px-3 pt-2 pb-2 border-b border-border">
+                  <div className="flex items-center gap-2">
+                    <p className="text-sm font-bold">Hygiene Alerts</p>
+                    {unreadCount > 0 && (
+                      <span className="rounded-full bg-grade-f/15 px-2 py-0.5 text-[11px] font-semibold text-grade-f">
+                        {unreadCount} new
+                      </span>
+                    )}
+                  </div>
+                  {unreadCount > 0 && (
+                    <button
+                      type="button"
+                      onClick={markAllAsRead}
+                      className="text-xs font-semibold text-primary hover:underline"
+                    >
+                      Mark all read
+                    </button>
+                  )}
+                </div>
+                <ul className="mt-1 divide-y divide-border/40">
+                  {notifications.map((n) => (
+                    <li key={n.id}>
+                      <Link
+                        href={n.href}
+                        onClick={() => setNotifOpen(false)}
+                        className={cn(
+                          'block rounded-xl px-3 py-2.5 transition-colors hover:bg-muted',
+                          n.unread && 'bg-primary/5'
+                        )}
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <p className={cn('text-xs font-bold', n.tone)}>{n.title}</p>
+                          <span className="shrink-0 text-[10px] text-muted-foreground">{n.time}</span>
+                        </div>
+                        <p className="mt-1 text-xs text-foreground/80 leading-snug">{n.body}</p>
+                      </Link>
                     </li>
                   ))}
                 </ul>

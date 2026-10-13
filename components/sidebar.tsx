@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Settings } from 'lucide-react'
-import { toast } from 'sonner'
 import { Logo } from '@/components/logo'
 import { NAV_ITEMS, isActive } from '@/lib/nav'
 import { cn } from '@/lib/utils'
@@ -15,10 +14,6 @@ interface SidebarNavProps {
 
 export function SidebarNav({ collapsed = false, onNavigate }: SidebarNavProps) {
   const pathname = usePathname()
-
-  const footerItems = [
-    { label: 'Settings', icon: Settings },
-  ]
 
   return (
     <div className="flex h-full flex-col">
@@ -65,22 +60,24 @@ export function SidebarNav({ collapsed = false, onNavigate }: SidebarNavProps) {
 
       <div className="border-t border-sidebar-border px-3 py-4">
         <ul className="flex flex-col gap-1">
-          {footerItems.map(({ label, icon: Icon }) => (
-            <li key={label}>
-              <button
-                type="button"
-                title={collapsed ? label : undefined}
-                onClick={() => toast(`${label} is coming soon`, { description: 'This section will be available in a future update.' })}
-                className={cn(
-                  'flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-sidebar-foreground transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none',
-                  collapsed && 'justify-center px-0',
-                )}
-              >
-                <Icon className="size-[18px] shrink-0" aria-hidden="true" />
-                {collapsed ? <span className="sr-only">{label}</span> : <span>{label}</span>}
-              </button>
-            </li>
-          ))}
+          <li>
+            <Link
+              href="/settings"
+              onClick={onNavigate}
+              aria-current={isActive(pathname, '/settings') ? 'page' : undefined}
+              title={collapsed ? 'Settings' : undefined}
+              className={cn(
+                'flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none',
+                collapsed && 'justify-center px-0',
+                isActive(pathname, '/settings')
+                  ? 'bg-primary text-primary-foreground shadow-sm shadow-primary/25'
+                  : 'text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
+              )}
+            >
+              <Settings className="size-[18px] shrink-0" aria-hidden="true" />
+              {collapsed ? <span className="sr-only">Settings</span> : <span>Settings</span>}
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

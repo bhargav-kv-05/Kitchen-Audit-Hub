@@ -4,8 +4,8 @@ import { Logo } from '@/components/logo'
 const LINKS = [
   { href: '/about', label: 'About' },
   { href: '/health-ratings', label: 'Health Rating Guide' },
-  { href: '/about#contact', label: 'Contact' },
-  { href: '/about#privacy', label: 'Privacy' },
+  { href: '/contact', label: 'Contact & Report' },
+  { href: '/privacy', label: 'Privacy' },
 ]
 
 export function Footer() {
