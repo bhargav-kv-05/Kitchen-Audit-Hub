@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, CalendarCheck, MapPin } from 'lucide-react'
 import { HealthGradeBadge, StatusPill } from '@/components/health-grade-badge'
-import { SaveButton } from '@/components/save-button'
 import { GRADE_META, formatDate } from '@/lib/grades'
 import type { Restaurant } from '@/lib/types'
 import { cn } from '@/lib/utils'
@@ -25,7 +24,6 @@ export function RestaurantCard({ restaurant, priority = false }: { restaurant: R
           <span className="rounded-full bg-card/90 px-2.5 py-1 text-xs font-semibold text-foreground shadow-sm backdrop-blur">
             {restaurant.cuisine}
           </span>
-          <SaveButton id={restaurant.id} name={restaurant.name} className="relative z-10" />
         </div>
         <HealthGradeBadge grade={restaurant.grade} size="lg" className="absolute -bottom-7 right-4 z-10" />
       </div>

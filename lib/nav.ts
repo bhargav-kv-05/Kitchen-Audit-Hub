@@ -1,6 +1,5 @@
 import {
   ClipboardCheck,
-  Heart,
   Info,
   LayoutDashboard,
   MapPin,
@@ -14,7 +13,6 @@ export const NAV_ITEMS = [
   { href: '/map', label: 'Map', icon: MapPin },
   { href: '/health-ratings', label: 'Health Ratings', icon: ShieldCheck },
   { href: '/inspections', label: 'Inspections', icon: ClipboardCheck },
-  { href: '/saved', label: 'Saved Restaurants', icon: Heart },
   { href: '/about', label: 'About', icon: Info },
 ] as const
 

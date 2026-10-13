@@ -110,15 +110,6 @@ export function Header({ collapsed, onToggleCollapse, onOpenMobile }: HeaderProp
               </div>
             )}
           </div>
-
-          <button
-            type="button"
-            onClick={() => toast('Signed in as Aarav Mehta', { description: 'Profile settings are coming soon.' })}
-            className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary font-heading text-sm font-bold text-secondary-foreground ring-2 ring-card transition-transform hover:scale-105 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
-          >
-            <span aria-hidden="true">AM</span>
-            <span className="sr-only">Account: Aarav Mehta</span>
-          </button>
         </div>
       </div>
     </header>

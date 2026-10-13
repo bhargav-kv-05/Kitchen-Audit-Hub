@@ -14,7 +14,7 @@ export async function GET(request: Request) {
     const query: any = {};
     
     if (grade) {
-      query.currentGrade = grade;
+      query.grade = grade;
     }
     
     if (cuisine) {
