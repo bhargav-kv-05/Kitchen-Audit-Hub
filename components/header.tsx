@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Bell, Check, ChevronDown, MapPin, Menu, PanelLeftClose, PanelLeftOpen } from 'lucide-react'
 import { toast } from 'sonner'
 import { SearchBar } from '@/components/search-bar'
+import { ThemeToggle } from '@/components/theme-toggle'
 import { LOCALITIES } from '@/lib/restaurants'
 import { cn } from '@/lib/utils'
 
@@ -100,6 +101,8 @@ export function Header({ collapsed, onToggleCollapse, onOpenMobile }: HeaderProp
         </div>
 
         <div className="ml-auto flex items-center gap-2 sm:gap-3">
+          <ThemeToggle />
+
           <div className="relative hidden md:block">
             <label htmlFor="location-select" className="sr-only">
               Select location

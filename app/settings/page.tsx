@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
-import { Bell, Check, Database, MapPin, RefreshCw, ShieldAlert, Sliders } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Bell, Check, Database, Laptop, MapPin, Moon, RefreshCw, ShieldAlert, Sliders, Sun } from 'lucide-react'
 import { toast } from 'sonner'
 import { PageHeader } from '@/components/page-header'
 import { LOCALITIES } from '@/lib/restaurants'
+import { cn } from '@/lib/utils'
 
 export default function SettingsPage() {
   const [defaultLocality, setDefaultLocality] = useState('All Locations')
@@ -12,6 +13,25 @@ export default function SettingsPage() {
   const [highlightHighRisk, setHighlightHighRisk] = useState(true)
   const [verifiedOnly, setVerifiedOnly] = useState(true)
   const [savedLocally, setSavedLocally] = useState(false)
+  const [currentTheme, setCurrentTheme] = useState('system')
+
+  useEffect(() => {
+    const stored = localStorage.getItem('theme') || 'system'
+    setCurrentTheme(stored)
+  }, [])
+
+  const handleThemeChange = (t: string) => {
+    setCurrentTheme(t)
+    localStorage.setItem('theme', t)
+    const root = document.documentElement
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    if (t === 'dark' || (t === 'system' && prefersDark)) {
+      root.classList.add('dark')
+    } else {
+      root.classList.remove('dark')
+    }
+    toast.success(`Theme set to ${t.charAt(0).toUpperCase() + t.slice(1)}`)
+  }
 
   const handleSave = () => {
     setSavedLocally(true)
@@ -100,6 +120,42 @@ export default function SettingsPage() {
               </select>
               <p className="mt-1.5 text-xs text-muted-foreground">Automatically filters out scores below this threshold.</p>
             </div>
+          </div>
+        </section>
+
+        {/* Theme & Appearance Section */}
+        <section className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-sm">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="inline-flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <Sun className="size-5" />
+            </span>
+            <div>
+              <h2 className="text-lg font-bold">Theme & Appearance</h2>
+              <p className="text-xs text-muted-foreground">Select your preferred color theme for the portal.</p>
+            </div>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            {[
+              { id: 'light', label: 'Light Mode', icon: Sun },
+              { id: 'dark', label: 'Dark Mode', icon: Moon },
+              { id: 'system', label: 'System Default', icon: Laptop },
+            ].map(({ id, label, icon: Icon }) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => handleThemeChange(id)}
+                className={cn(
+                  'flex items-center gap-3 p-3.5 rounded-2xl border transition-all text-sm font-semibold',
+                  currentTheme === id
+                    ? 'border-primary bg-primary/10 text-primary shadow-sm'
+                    : 'border-border bg-background text-foreground hover:bg-muted'
+                )}
+              >
+                <Icon className="size-4 shrink-0" />
+                <span>{label}</span>
+              </button>
+            ))}
           </div>
         </section>
 
