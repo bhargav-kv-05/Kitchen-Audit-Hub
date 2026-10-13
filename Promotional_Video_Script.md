@@ -24,16 +24,18 @@
 
 ---
 
-### Scene 2: Transparent Public Safety (0:25 – 0:55)
+### Scene 2: Transparent Public Safety & The Health Rating Scale (0:25 – 0:55)
 * **Visual:**
-  * *Dashboard Scrolled Down*: Zoom into **Total Restaurants (248)**, **Grade A (186)**, **Recent Inspections (42)**, and the **Grade Distribution Bar** (75% Grade A, 15% Grade B, 7% Grade C, 3% Failed).
-  * Smooth pan across top-rated kitchens (Conçu Patisserie 99%, Tatva Fine Dining 98%).
+  * *Dashboard Scrolled Down (0:25 – 0:36)*: Zoom into **Total Restaurants (248)**, **Grade A (186)**, **Recent Inspections (42)**, and the **Grade Distribution Bar** (75% Grade A, 15% Grade B, 7% Grade C, 3% Failed).
+  * *Quick B-Roll Cut to Health Ratings Guide (`/health-ratings`, 0:36 – 0:45)*: Pan across the **4 Grade Scale Cards** (Grade A 90–100% Emerald, Grade B 80–89% Amber, Grade C 70–79% Orange, Failed <70% Crimson) and the 6 evaluation pillars (Food Handling, Cold Chain, Pest Control).
+  * *Cut back to Top Rated Kitchens (0:45 – 0:55)*: Conçu Patisserie (99%), Tatva Fine Dining (98%).
 * **On-Screen Text Overlay:**
   * *"Verified Health Ratings · Hyderabad Citywide"*
-  * *"Municipal Audits Translated for Everyday Diners"*
+  * *"Standardized 4-Tier Scale: Grade A (90%+) to Failed (<70%)"*
 * **Female Voiceover:**
   > *"Kitchen Audit Hub bridges the gap between public health data and everyday consumers.*  
   > *We take official municipal food safety audits across Hyderabad and transform them into clear, transparent, actionable intelligence.*  
+  > *Every kitchen is evaluated across six rigorous safety pillars—from food handling and cold-chain compliance to pest control—mapping directly to simple, standardized letter grades.*  
   > *From Jubilee Hills to Gachibowli, Charminar to Secunderabad—over two hundred verified food establishments are rated, categorized, and open for inspection before you spend a single rupee."*
 
 ---
@@ -55,7 +57,7 @@
 
 ---
 
-### Scene 4: The Tale of Two Kitchens (1:25 – 1:55)
+### Scene 4: The Tale of Two Kitchens (The Contrast) (1:25 – 1:55)
 * **Visual (Side-by-Side / Fast Contrast Split):**
   * **Screen A (Safe):** *Tatva Fine Dining (`/restaurants/tatva-jubilee-hills`)*:
     * 98% Health Score gauge (Emerald).
@@ -78,14 +80,15 @@
 
 ### Scene 5: Instant AI Clarity & Real-Time Alerts (1:55 – 2:20)
 * **Visual:**
-  * Zoom in on the **AI Health Summary badge** on the restaurant detail page.
-  * Click the **Bell Notification Icon** in the header:
+  * *Deep-Zoom on AI Health Summary Card (`/restaurants/tatva-jubilee-hills` & `/restaurants/street-wok-express-gachibowli`)*:
+    * Highlighting the sparkling AI badge and the 3-sentence plain-language safety takeaway.
+  * *Transition to Header Notification Bell Dropdown (2:08 – 2:20)*:
     * Dropdown opens showing:
       * *Critical Alert: Street Wok Express (56%) — Urgent corrective action ordered.*
       * *Top Hygiene Rating: Conçu Patisserie (99%).*
       * *Audit Verified: Tatva Fine Dining (98%).*
 * **On-Screen Text Overlay:**
-  * *"AI Food Safety Summaries · In Plain Language"*
+  * *"AI Food Safety Summaries · Plain Consumer Language"*
   * *"Real-Time Hygiene Alerts Delivered Instantly"*
 * **Female Voiceover:**
   > *"You don't need to be a certified health inspector to understand our reports.*  
@@ -116,7 +119,7 @@
 
 ### TTS Voice Settings Recommendation
 * **Platform:** Google Cloud Text-to-Speech / Gemini Nano / ElevenLabs
-* **Voice Model:** Neural2 / Studio Female (e.g. `en-IN-Neural2-A` or `en-US-Studio-O` / ElevenLabs `Rachel`)
+* **Voice Model:** Neural2 / Studio Female (e.g. `en-IN-Neural2-A` or `en-US-Studio-O` / ElevenLabs `Rachel` or `Lily`)
 * **Speaking Rate:** `1.02x` (natural, brisk, professional pace)
 * **Pitch:** Natural tone (`0.0st`)
 * **Audio Export:** 48kHz WAV / 320kbps MP3
