@@ -11,11 +11,9 @@ import RestaurantModel from '@/models/Restaurant'
 import { Sparkles } from 'lucide-react'
 import Groq from 'groq-sdk'
 
-type Props = { params: Promise<{ id: string }> }
+export const dynamic = 'force-dynamic'
 
-export function generateStaticParams() {
-  return restaurants.map((r) => ({ id: r.id }))
-}
+type Props = { params: Promise<{ id: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params
@@ -33,16 +31,33 @@ async function getAiExplanation(restaurant: any) {
   
   try {
     const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-    const inspections = (restaurant.inspectionHistory || []).slice(0, 3);
-    const prompt = `
-      You are a food safety expert. Explain the following restaurant inspection data to a normal user in 2 simple sentences. 
-      Restaurant: ${restaurant.name}
-      Recent Inspections: ${JSON.stringify(inspections)}
-    `;
-    
+    const latestAudit = restaurant.inspectionHistory?.[0] || {};
+    const violations = (restaurant.violations || []).slice(0, 3).map((v: any) => v.title).join(", ");
+
+    const systemPrompt = `You are a certified food safety auditor for Kitchen Audit Hub (Hyderabad).
+Your mission is to translate dense official hygiene inspection records into a clear, trustworthy, 2 to 3 sentence summary for consumers choosing where to order food.
+Keep your tone objective, professional, and accessible to everyday consumers. Max 60 words.`;
+
+    const userPrompt = `
+Analyze the official hygiene inspection for this establishment:
+- Name: ${restaurant.name} (${restaurant.locality}, Hyderabad)
+- Current Health Score: ${restaurant.healthScore}% (Grade ${restaurant.grade})
+- Latest Audit Status: ${latestAudit.status || 'Completed'} (${latestAudit.date || 'Recent'})
+- Key Audit Observations: ${violations || 'No critical violations noted. Fully compliant with food safety standards.'}
+
+Format:
+Sentence 1: Clear safety verdict and grade context for consumers.
+Sentence 2: Summary of back-of-house hygiene standards or notable observations.
+Sentence 3: Practical consumer takeaway so they can order with confidence.`;
+
     const completion = await groq.chat.completions.create({
-      messages: [{ role: "user", content: prompt }],
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userPrompt }
+      ],
       model: "qwen/qwen3.8-27b",
+      max_tokens: 120,
+      temperature: 0.3,
     });
     
     return completion.choices[0]?.message?.content || "No explanation available.";

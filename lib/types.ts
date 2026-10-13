@@ -56,4 +56,6 @@ export interface Restaurant {
   inspectionHistory: Inspection[]
   categories: CategoryScores
   mapPosition: { x: number; y: number }
+  lat?: number
+  lng?: number
 }

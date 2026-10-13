@@ -16,6 +16,8 @@ export interface IRestaurant extends Document {
   inspectionHistory: any[];
   categories: any;
   mapPosition: { x: number; y: number };
+  lat?: number;
+  lng?: number;
 }
 
 const RestaurantSchema: Schema = new Schema(
@@ -38,7 +40,9 @@ const RestaurantSchema: Schema = new Schema(
     mapPosition: {
       x: { type: Number },
       y: { type: Number }
-    }
+    },
+    lat: { type: Number },
+    lng: { type: Number }
   },
   { timestamps: true }
 );

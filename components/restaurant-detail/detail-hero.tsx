@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { CalendarCheck, ChevronLeft, MapPin, Navigation, Utensils } from 'lucide-react'
 import { HealthGradeBadge, StatusPill } from '@/components/health-grade-badge'
-import { SaveButton } from '@/components/save-button'
 import { formatDate } from '@/lib/grades'
 import type { Restaurant } from '@/lib/types'
 
@@ -60,7 +59,6 @@ export function DetailHero({ restaurant: r }: { restaurant: Restaurant }) {
               <StatusPill grade={r.grade} />
             </div>
           </div>
-          <SaveButton id={r.id} name={r.name} variant="full" />
           <Link
             href={`/map?focus=${r.id}`}
             className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"

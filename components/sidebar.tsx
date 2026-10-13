@@ -2,11 +2,10 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Settings, UserRound } from 'lucide-react'
+import { Settings } from 'lucide-react'
 import { toast } from 'sonner'
 import { Logo } from '@/components/logo'
 import { NAV_ITEMS, isActive } from '@/lib/nav'
-import { useSaved } from '@/lib/use-saved'
 import { cn } from '@/lib/utils'
 
 interface SidebarNavProps {
@@ -16,11 +15,9 @@ interface SidebarNavProps {
 
 export function SidebarNav({ collapsed = false, onNavigate }: SidebarNavProps) {
   const pathname = usePathname()
-  const { saved } = useSaved()
 
   const footerItems = [
     { label: 'Settings', icon: Settings },
-    { label: 'Profile', icon: UserRound },
   ]
 
   return (
@@ -58,16 +55,6 @@ export function SidebarNav({ collapsed = false, onNavigate }: SidebarNavProps) {
                     <span className="sr-only">{label}</span>
                   ) : (
                     <span className="flex-1 truncate">{label}</span>
-                  )}
-                  {!collapsed && href === '/saved' && saved.length > 0 && (
-                    <span
-                      className={cn(
-                        'rounded-full px-2 py-0.5 text-[11px] font-semibold',
-                        active ? 'bg-primary-foreground/20 text-primary-foreground' : 'bg-secondary text-secondary-foreground',
-                      )}
-                    >
-                      {saved.length}
-                    </span>
                   )}
                 </Link>
               </li>
