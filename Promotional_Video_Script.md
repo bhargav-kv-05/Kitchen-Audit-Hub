@@ -1,18 +1,18 @@
-# Kitchen Audit Hub — 12-Clip AI Promotional Video Package (Google Flow Optimized)
+# Kitchen Audit Hub — 14-Clip AI Promotional Video Package (Google Flow Optimized)
 
-**Total Duration:** 120 Seconds (2 Minutes Sharp)  
-**Format:** 12 Modular 10-Second Clips (10s per prompt in Google Flow / Veo / Sora)  
+**Total Duration:** 140 Seconds (~2 Minutes 20 Seconds)  
+**Format:** 14 Modular 10-Second Clips (10s per prompt in Google Flow / Veo / Sora)  
 **Target Voiceover:** Female voice — confident, warm, professional, engaging (e.g., Google Flow / Gemini "Aoede" / ElevenLabs "Rachel" or "Lily")  
 **Music Track:** Modern upbeat tech corporate track with warm acoustic pads and subtle percussion (~115 BPM, volume mixed at 12% under voiceover).
 
 ---
 
-## 12-Clip Master Storyboard & Prompt Guide (10s per Clip)
+## 14-Clip Master Storyboard & Prompt Guide (10s per Clip)
 
 ```
-0:00        0:30        1:00        1:30        2:00
-|--HOOK--|--STANDARDS--|--MAP TECH--|--CONTRAST--|--AI & CTA--|
-Clips 1-3   Clips 4-5     Clips 6-7    Clips 8-10   Clips 11-12
+0:00        0:30        1:00        1:30        2:00       2:20
+|--HOOK--|--STANDARDS--|--MAP TECH--|--CONTRAST--|--DEFENSE--|--EMPOWER--|
+Clips 1-3   Clips 4-5     Clips 6-7    Clips 8-10   Clip 11     Clips 12-14
 ```
 
 ---
@@ -127,17 +127,37 @@ Clips 1-3   Clips 4-5     Clips 6-7    Clips 8-10   Clips 11-12
 
 ---
 
-### 🎬 CLIP 12 (1:50 – 2:00) | Consumer Empowerment & Call to Action
-* **Screenshot Reference:** `/contact` *Submit Inspection Lead form ➡️ Centered Kitchen Audit Hub Logo lockup*.
+### 🎬 CLIP 12 (1:50 – 2:00) | Consumer Safety Controls: Settings & Warning Badges
+* **Screenshot Reference:** `/settings` in *Dark Mode (Highlight High-Risk Establishments, Official Audit Verification filter, Locality Preferences)*.
 * **Google Flow Prompt:**
-  > *Fast montage: a finger taps 'Submit Inspection Lead' on a clean reporting form, resolving into a premium animated green shield logo with the tagline: 'Know the Kitchen Before You Order. KitchenAuditHub.in'. Bright, confident finale.*
-* **On-Screen Text Overlay:** `"Search. Verify. Order With Confidence. · KitchenAuditHub.in"`
-* **Female Voiceover (20 words):**
-  > *"Report kitchen concerns. Verify hygiene ratings. Order food with complete confidence. Kitchen Audit Hub: Know the kitchen before you order."*
+  > *Sleek camera glide over a modern dark settings dashboard. Glowing emerald checkboxes toggle on 'Highlight High-Risk Establishments' and 'Official Audit Verification Filter'. Smooth UI controls, modern privacy aesthetic.*
+* **On-Screen Text Overlay:** `"Custom Safety Controls · High-Risk Warning Badges · Local Privacy"`
+* **Female Voiceover (22 words):**
+  > *"Take full control in Settings: customize risk threshold warnings, filter only verified government audits, and manage your local dining preferences with complete privacy."*
 
 ---
 
-## Google Flow Quick-Copy Table (10-Second Batch Inputs)
+### 🎬 CLIP 13 (2:00 – 2:10) | Community Action: Report a Kitchen Concern
+* **Screenshot Reference:** `/contact` *(Submit a Hygiene Observation form, Concern Category dropdown, GHMC Helpline)*.
+* **Google Flow Prompt:**
+  > *Smooth pan over a clean consumer reporting form. A finger taps 'Food Storage / Cold Chain' and selects 'Submit Inspection Lead' with an instant animated green checkmark confirmation.*
+* **On-Screen Text Overlay:** `"Consumer Action · Report Unsafe Kitchens Directly"`
+* **Female Voiceover (21 words):**
+  > *"Notice unsafe food handling? Submit direct hygiene observation leads to food safety auditors, protecting fellow consumers and holding back-of-house kitchens accountable."*
+
+---
+
+### 🎬 CLIP 14 (2:10 – 2:20) | The Final Verdict & Call to Action
+* **Screenshot Reference:** *Kitchen Audit Hub Official Shield Logo Lockup & Tagline*.
+* **Google Flow Prompt:**
+  > *Cinematic camera pulls back into a clean, modern emerald shield emblem with fork and knife insignia. Vibrant typography reveals 'Kitchen Audit Hub — Know the Kitchen Before You Order'. Bright commercial studio lighting, confident hero finish.*
+* **On-Screen Text Overlay:** `"Search. Verify. Order With Confidence. · KitchenAuditHub.in"`
+* **Female Voiceover (20 words):**
+  > *"Search hundreds of eateries. Filter by top grades. Order food with complete confidence. Kitchen Audit Hub: Know the kitchen before you order."*
+
+---
+
+## Google Flow Quick-Copy Table (14 Clips × 10 Seconds)
 
 | Clip | Time | Screenshot Asset | Voiceover Dialogue (Female TTS) |
 |---|---|---|---|
@@ -152,4 +172,6 @@ Clips 1-3   Clips 4-5     Clips 6-7    Clips 8-10   Clips 11-12
 | **09** | `1:20-1:30` | Street Wok 56% Hero | *"Now look at Street Wok Express. Rated high for taste on food delivery apps, but Kitchen Audit Hub uncovers a failing fifty-six percent score."* |
 | **10** | `1:30-1:40` | Street Wok Violations | *"Official inspectors cited raw chicken thawing at eighty-four degrees, active rodent droppings, and severe cross-contamination. That is the truth delivery apps hide."* |
 | **11** | `1:40-1:50` | AI Summary + Alerts | *"Our built-in AI translates complex multi-page government reports into clear, three-sentence consumer summaries, while live notifications alert you to recent kitchen violations."* |
-| **12** | `1:50-2:00` | /contact + Final Logo | *"Report kitchen concerns. Verify hygiene ratings. Order food with complete confidence. Kitchen Audit Hub: Know the kitchen before you order."* |
+| **12** | `1:50-2:00` | /settings Dark Controls | *"Take full control in Settings: customize risk threshold warnings, filter only verified government audits, and manage your local dining preferences with complete privacy."* |
+| **13** | `2:00-2:10` | /contact Lead Report | *"Notice unsafe food handling? Submit direct hygiene observation leads to food safety auditors, protecting fellow consumers and holding back-of-house kitchens accountable."* |
+| **14** | `2:10-2:20` | Final Shield Logo Lockup | *"Search hundreds of eateries. Filter by top grades. Order food with complete confidence. Kitchen Audit Hub: Know the kitchen before you order."* |
