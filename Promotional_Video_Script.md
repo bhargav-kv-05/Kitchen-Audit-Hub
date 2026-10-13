@@ -1,125 +1,155 @@
-# Kitchen Audit Hub — Official Promotional Video Production Package
+# Kitchen Audit Hub — 12-Clip AI Promotional Video Package (Google Flow Optimized)
 
-**Video Title:** *Know the Kitchen Before You Order*  
-**Duration:** ~2 minutes 30 seconds (150 seconds)  
-**Target Voiceover:** Female voice — confident, warm, professional, engaging (e.g., Google Flow / Gemini "Aoede" / ElevenLabs "Rachel" or "Serena")  
-**Music Track:** Contemporary, sleek, upbeat tech corporate track with warm acoustic pads and subtle percussion (builds from curiosity to empowerment).
-
----
-
-## Storyboard & Voiceover Script (Scene-by-Scene)
-
-### Scene 1: The Hidden Reality (0:00 – 0:25)
-* **Visual:**
-  * Fast cuts: Delivery app smartphone mockup showing sizzling biryani, steaming momos, 4.5-star user reviews.
-  * *Cut to Kitchen Audit Hub Hero Screen* (`Dashboard Hero`): Highlighting the bold headline: **"Know the Kitchen Before You Order."**
-* **On-Screen Text Overlay:**
-  * *"4.5 Stars for Taste... But What About Hygiene?"*
-  * *"Official inspection records shouldn't be a secret."*
-* **Female Voiceover:**
-  > *"When you order food online, what are you really seeing? Perfect photos. Fast delivery times. Five-star ratings for flavor.*  
-  > *But what's happening back-of-house, where your food is actually prepped?*  
-  > *Until now, official government inspection reports have been buried in dense municipal portals—invisible to the consumers who need them most.*  
-  > *Welcome to **Kitchen Audit Hub**."*
+**Total Duration:** 120 Seconds (2 Minutes Sharp)  
+**Format:** 12 Modular 10-Second Clips (10s per prompt in Google Flow / Veo / Sora)  
+**Target Voiceover:** Female voice — confident, warm, professional, engaging (e.g., Google Flow / Gemini "Aoede" / ElevenLabs "Rachel" or "Lily")  
+**Music Track:** Modern upbeat tech corporate track with warm acoustic pads and subtle percussion (~115 BPM, volume mixed at 12% under voiceover).
 
 ---
 
-### Scene 2: Transparent Public Safety & The Health Rating Scale (0:25 – 0:55)
-* **Visual:**
-  * *Dashboard Scrolled Down (0:25 – 0:36)*: Zoom into **Total Restaurants (248)**, **Grade A (186)**, **Recent Inspections (42)**, and the **Grade Distribution Bar** (75% Grade A, 15% Grade B, 7% Grade C, 3% Failed).
-  * *Quick B-Roll Cut to Health Ratings Guide (`/health-ratings`, 0:36 – 0:45)*: Pan across the **4 Grade Scale Cards** (Grade A 90–100% Emerald, Grade B 80–89% Amber, Grade C 70–79% Orange, Failed <70% Crimson) and the 6 evaluation pillars (Food Handling, Cold Chain, Pest Control).
-  * *Cut back to Top Rated Kitchens (0:45 – 0:55)*: Conçu Patisserie (99%), Tatva Fine Dining (98%).
-* **On-Screen Text Overlay:**
-  * *"Verified Health Ratings · Hyderabad Citywide"*
-  * *"Standardized 4-Tier Scale: Grade A (90%+) to Failed (<70%)"*
-* **Female Voiceover:**
-  > *"Kitchen Audit Hub bridges the gap between public health data and everyday consumers.*  
-  > *We take official municipal food safety audits across Hyderabad and transform them into clear, transparent, actionable intelligence.*  
-  > *Every kitchen is evaluated across six rigorous safety pillars—from food handling and cold-chain compliance to pest control—mapping directly to simple, standardized letter grades.*  
-  > *From Jubilee Hills to Gachibowli, Charminar to Secunderabad—over two hundred verified food establishments are rated, categorized, and open for inspection before you spend a single rupee."*
+## 12-Clip Master Storyboard & Prompt Guide (10s per Clip)
+
+```
+0:00        0:30        1:00        1:30        2:00
+|--HOOK--|--STANDARDS--|--MAP TECH--|--CONTRAST--|--AI & CTA--|
+Clips 1-3   Clips 4-5     Clips 6-7    Clips 8-10   Clips 11-12
+```
 
 ---
 
-### Scene 3: Geospatial Kitchen Intelligence (0:55 – 1:25)
-* **Visual:**
-  * *Interactive Map View (Light Mode & Dark Mode)*:
-  * Pan across Hyderabad map showing emerald Grade A, amber Grade B, and red Grade F pins.
-  * Click on locality chips: *Banjara Hills*, *Jubilee Hills (10)*, *Gachibowli (4)*.
-  * Click on **Paradise Biryani (Secunderabad)** popup showing Grade B (85%) and **Absolute Barbecues** in sleek Dark Mode.
-* **On-Screen Text Overlay:**
-  * *"Live Locality Filtering · OpenStreetMap Powered"*
-  * *"Interactive Map Pins: Grade A to Failed"*
-* **Female Voiceover:**
-  > *"Finding safe dining near you has never been easier.*  
-  > *Our real-time interactive map visualizes the food safety landscape of your neighborhood.*  
-  > *Filter by your locality with a single tap, explore color-coded health grades, and switch effortlessly between daylight and ultra-sleek dark mode.*  
-  > *Tap any restaurant marker to view distance, immediate scores, and direct audit access."*
+### 🎬 CLIP 01 (0:00 – 0:10) | The Hook: The App Blindspot
+* **Screenshot Reference:** Appetizing food delivery images (sizzling biryani, steaming momos, pizza) ➡️ Subtle glitch transition.
+* **Google Flow Prompt:**
+  > *Cinematic slow zoom into a smartphone displaying tempting food delivery dishes and 4.8-star user ratings. Warm commercial food lighting, shallow depth of field. Subtle digital glitch transitions to reveal the back-of-house kitchen mystery.*
+* **On-Screen Text Overlay:** `"4.5 Stars for Taste... But What About Hygiene?"`
+* **Female Voiceover (22 words):**
+  > *"When you order food online, you see five-star taste ratings and mouthwatering photos. But what's happening where your food is actually prepared?"*
 
 ---
 
-### Scene 4: The Tale of Two Kitchens (The Contrast) (1:25 – 1:55)
-* **Visual (Side-by-Side / Fast Contrast Split):**
-  * **Screen A (Safe):** *Tatva Fine Dining (`/restaurants/tatva-jubilee-hills`)*:
-    * 98% Health Score gauge (Emerald).
-    * Category breakdown: 100% Pest Control, 99% Food Storage, 98% Food Handling.
-    * 3 consecutive Passed routine inspections.
-  * **Screen B (Danger):** *Street Wok Express (`/restaurants/street-wok-express-gachibowli`)*:
-    * 56% Health Score gauge (Red Critical).
-    * Open Violations: **Critical Temperature Abuse** (*raw chicken thawing in ambient air at 84°F*), **Pest Infestation Evidence** (*rodent droppings detected*), **Cross-Contamination Hazard**.
-* **On-Screen Text Overlay:**
-  * *"Tatva: Grade A · 98% (Exemplary Cold-Chain)"*
-  * *"Street Wok Express: Grade F · 56% (Critical Violations Uncovered)"*
-* **Female Voiceover:**
-  > *"Here is why transparency matters.*  
-  > *Take Tatva Fine Dining: a verified ninety-eight percent score with perfect pest control and flawless routine audit records. You can dine with absolute confidence.*  
-  > *Now look at Street Wok Express: fifty-six percent. Grade F.*  
-  > *Delivery apps will gladly let you order from their kitchen. But Kitchen Audit Hub uncovers the truth: raw chicken thawing at eighty-four degrees, unwashed cutting boards, and active rodent citations.*  
-  > *That is information every family deserves to know."*
+### 🎬 CLIP 02 (0:10 – 0:20) | The Problem: Buried Inspection Records
+* **Screenshot Reference:** `Dashboard Hero Screen` (*"Know the Kitchen Before You Order"* with verified badge & search bar).
+* **Google Flow Prompt:**
+  > *Smooth upward camera glide over a modern, clean web dashboard hero. Bold green and dark typography reading 'Know the Kitchen Before You Order'. Bright daylight office lighting, sharp UI details, 4k tech commercial look.*
+* **On-Screen Text Overlay:** `"Official Inspection Records Are Hidden From Consumers."`
+* **Female Voiceover (21 words):**
+  > *"Official food safety inspection reports are buried inside dense municipal government portals—invisible to everyday consumers. Until now. Welcome to Kitchen Audit Hub."*
 
 ---
 
-### Scene 5: Instant AI Clarity & Real-Time Alerts (1:55 – 2:20)
-* **Visual:**
-  * *Deep-Zoom on AI Health Summary Card (`/restaurants/tatva-jubilee-hills` & `/restaurants/street-wok-express-gachibowli`)*:
-    * Highlighting the sparkling AI badge and the 3-sentence plain-language safety takeaway.
-  * *Transition to Header Notification Bell Dropdown (2:08 – 2:20)*:
-    * Dropdown opens showing:
-      * *Critical Alert: Street Wok Express (56%) — Urgent corrective action ordered.*
-      * *Top Hygiene Rating: Conçu Patisserie (99%).*
-      * *Audit Verified: Tatva Fine Dining (98%).*
-* **On-Screen Text Overlay:**
-  * *"AI Food Safety Summaries · Plain Consumer Language"*
-  * *"Real-Time Hygiene Alerts Delivered Instantly"*
-* **Female Voiceover:**
-  > *"You don't need to be a certified health inspector to understand our reports.*  
-  > *Our intelligent food safety model translates lengthy multi-page government documents into clear, three-sentence consumer summaries.*  
-  > *And with live hygiene alerts, you're immediately warned the moment a nearby kitchen receives a critical violation or clears a re-inspection."*
+### 🎬 CLIP 03 (0:20 – 0:30) | The Platform: Live Hyderabad Intelligence
+* **Screenshot Reference:** `Dashboard Scrolled Down` (*248 Restaurants, 186 Grade A, 42 Inspections, Grade Distribution Bar*).
+* **Google Flow Prompt:**
+  > *Dynamic pan across data metric cards showing '248 Total Restaurants' and '186 Grade A'. A colorful progress bar animates across the screen with green, yellow, orange, and red segments. Clean tech UI animation.*
+* **On-Screen Text Overlay:** `"248 Verified Hyderabad Restaurants · Live Health Distribution"`
+* **Female Voiceover (22 words):**
+  > *"We transform official municipal food safety audits across Hyderabad into clear, accessible public intelligence—covering hundreds of kitchens before you spend a rupee."*
 
 ---
 
-### Scene 6: Empowerment & The Verdict (2:20 – 2:45)
-* **Visual:**
-  * Quick cuts:
-    * *Restaurants Explorer*: Filtering by Grade A + Jubilee Hills.
-    * *Report a Concern (`/contact`)*: Consumer filing a hygiene observation lead directly with emergency GHMC coordination.
-    * *Settings Screen (`/settings`)*: High-risk establishment highlight toggles.
-  * Final hero lock-up: **Kitchen Audit Hub Logo & Headline: "Know the Kitchen Before You Order."**
-* **On-Screen Text Overlay:**
-  * *"Search. Verify. Order With Confidence."*
-  * *"KitchenAuditHub.in · Hyderabad"*
-* **Female Voiceover:**
-  > *"Search hundreds of eateries. Filter by top grades. Report kitchen concerns directly to safety auditors.*  
-  > *Take control of your dining decisions.*  
-  > *Because great food starts with a clean kitchen.*  
-  > *Kitchen Audit Hub. Know the kitchen before you order."*
+### 🎬 CLIP 04 (0:30 – 0:40) | The Standard: The 4-Tier Health Scale
+* **Screenshot Reference:** `/health-ratings` *Understanding Health Ratings (Grade A, B, C, F Scale Cards)*.
+* **Google Flow Prompt:**
+  > *Smooth horizontal tracking shot across four large, elegant health grade cards: Emerald Grade A (90-100%), Amber Grade B, Orange Grade C, and Crimson Grade F. Crisp typography, subtle drop shadows.*
+* **On-Screen Text Overlay:** `"Grade A (90%+) to Failed (<70%) · Standardized FSSAI Scale"`
+* **Female Voiceover (20 words):**
+  > *"Every establishment is measured on a standardized four-tier scale: from Grade A excellent compliance down to Grade F critical safety risk."*
 
 ---
 
-## Production Generation Guide (Google Flow / Gemini / ElevenLabs)
+### 🎬 CLIP 05 (0:40 – 0:50) | The Science: 6 Core Safety Pillars
+* **Screenshot Reference:** `/health-ratings` *How Restaurants Are Evaluated (3 Steps & 6 Criteria Icons)*.
+* **Google Flow Prompt:**
+  > *Slow punch-in zoom onto a grid of modern inspection icons: Food Handling, Temperature Control, Cold Storage, and Pest Control. Professional municipal inspection aesthetic, emerald accents.*
+* **On-Screen Text Overlay:** `"Unannounced Audits · 6 Scientific Safety Pillars"`
+* **Female Voiceover (21 words):**
+  > *"Inspectors conduct unannounced visits, rigorously evaluating food handling, temperature control, refrigeration standards, and pest management across every single kitchen."*
 
-### TTS Voice Settings Recommendation
-* **Platform:** Google Cloud Text-to-Speech / Gemini Nano / ElevenLabs
-* **Voice Model:** Neural2 / Studio Female (e.g. `en-IN-Neural2-A` or `en-US-Studio-O` / ElevenLabs `Rachel` or `Lily`)
-* **Speaking Rate:** `1.02x` (natural, brisk, professional pace)
-* **Pitch:** Natural tone (`0.0st`)
-* **Audio Export:** 48kHz WAV / 320kbps MP3
+---
+
+### 🎬 CLIP 06 (0:50 – 1:00) | The Discovery: Hyderabad Interactive Map
+* **Screenshot Reference:** `/map` *(Clean OpenStreetMap with locality chips & color-coded pins)*.
+* **Google Flow Prompt:**
+  > *Cinematic aerial map view gliding over Hyderabad city streets. Bright color-coded pins in green, yellow, and red pop onto the map smoothly. Locality tags for Banjara Hills and Jubilee Hills highlight interactively.*
+* **On-Screen Text Overlay:** `"Interactive Geospatial Map · Locality Filter Chips"`
+* **Female Voiceover (21 words):**
+  > *"Explore your neighborhood with our real-time interactive map. Filter by your locality with a single tap to discover verified clean kitchens near you."*
+
+---
+
+### 🎬 CLIP 07 (1:00 – 1:10) | Nighttime Ordering: Sleek Dark Mode Map
+* **Screenshot Reference:** `/map` in *Dark Mode (Absolute Barbecues popup & DLF Road pins)*.
+* **Google Flow Prompt:**
+  > *Futuristic seamless transition from light mode into a sleek, high-contrast dark mode map. Glowing emerald and amber pins illuminate the dark streets. A floating restaurant card pops open smoothly with 4K clarity.*
+* **On-Screen Text Overlay:** `"Night-Time Ordering · Instant Score & Distance Preview"`
+* **Female Voiceover (20 words):**
+  > *"Ordering late at night? Switch effortlessly to dark mode. Tap any restaurant marker for instant health scores, distances, and full audit access."*
+
+---
+
+### 🎬 CLIP 08 (1:10 – 1:20) | The Gold Standard: Tatva Fine Dining (Grade A · 98%)
+* **Screenshot Reference:** `/restaurants/tatva-jubilee-hills` *(Hero banner, 98/100 score gauge, 100% pest control)*.
+* **Google Flow Prompt:**
+  > *Smooth camera pan down a luxury restaurant profile. An emerald circular progress gauge reads '98 out of 100'. Green progress bars show 100% pest control and flawless routine inspection records.*
+* **On-Screen Text Overlay:** `"Tatva Fine Dining: Grade A · 98% | 100% Pest Control"`
+* **Female Voiceover (22 words):**
+  > *"Here is the gold standard: Tatva Fine Dining. A verified ninety-eight percent score, zero food safety citations, and exemplary cold-chain hygiene you can trust."*
+
+---
+
+### 🎬 CLIP 09 (1:20 – 1:30) | The Hidden Risk: Street Wok Express (Grade F · 56%)
+* **Screenshot Reference:** `/restaurants/street-wok-express-gachibowli` *(Wok flame hero, red 56/100 gauge, critical tag)*.
+* **Google Flow Prompt:**
+  > *Dramatic shift in tone. Camera zooms in on a sizzling street wok image, transitioning down to reveal a stark red 'F' badge and a concerning 56% health score. High contrast, warning aesthetic.*
+* **On-Screen Text Overlay:** `"Street Wok Express: Grade F · 56% | Failed in Reality"`
+* **Female Voiceover (21 words):**
+  > *"Now look at Street Wok Express. Rated high for taste on food delivery apps, but Kitchen Audit Hub uncovers a failing fifty-six percent score."*
+
+---
+
+### 🎬 CLIP 10 (1:30 – 1:40) | The Truth Uncovered: 4 Open Critical Violations
+* **Screenshot Reference:** Street Wok Express *Violations List (Critical Temperature Abuse, Rodent Droppings)*.
+* **Google Flow Prompt:**
+  > *Sharp punch-in zoom onto red violation alert cards on screen. Red warning icons highlight text: 'Raw chicken thawing in ambient air at 84°F' and 'Rodent droppings detected'. High-stakes investigative reveal.*
+* **On-Screen Text Overlay:** `"Raw Chicken at 84°F · Rodent Droppings · Cross Contamination"`
+* **Female Voiceover (21 words):**
+  > *"Official inspectors cited raw chicken thawing at eighty-four degrees, active rodent droppings, and severe cross-contamination. That is the truth delivery apps hide."*
+
+---
+
+### 🎬 CLIP 11 (1:40 – 1:50) | Intelligent Defense: AI Summaries & Live Alerts
+* **Screenshot Reference:** *AI Health Summary Card (Groq LLM badge) + Header Notification Dropdown open*.
+* **Google Flow Prompt:**
+  > *Glowing AI sparkle icon pulses beside an 'AI Health Summary' card. The camera pans up to the header where the notification bell opens, showing real-time red hygiene alerts dropping into view smoothly.*
+* **On-Screen Text Overlay:** `"AI Health Summaries · Real-Time Hygiene Push Alerts"`
+* **Female Voiceover (22 words):**
+  > *"Our built-in AI translates complex multi-page government reports into clear, three-sentence consumer summaries, while live notifications alert you to recent kitchen violations."*
+
+---
+
+### 🎬 CLIP 12 (1:50 – 2:00) | Consumer Empowerment & Call to Action
+* **Screenshot Reference:** `/contact` *Submit Inspection Lead form ➡️ Centered Kitchen Audit Hub Logo lockup*.
+* **Google Flow Prompt:**
+  > *Fast montage: a finger taps 'Submit Inspection Lead' on a clean reporting form, resolving into a premium animated green shield logo with the tagline: 'Know the Kitchen Before You Order. KitchenAuditHub.in'. Bright, confident finale.*
+* **On-Screen Text Overlay:** `"Search. Verify. Order With Confidence. · KitchenAuditHub.in"`
+* **Female Voiceover (20 words):**
+  > *"Report kitchen concerns. Verify hygiene ratings. Order food with complete confidence. Kitchen Audit Hub: Know the kitchen before you order."*
+
+---
+
+## Google Flow Quick-Copy Table (10-Second Batch Inputs)
+
+| Clip | Time | Screenshot Asset | Voiceover Dialogue (Female TTS) |
+|---|---|---|---|
+| **01** | `0:00-0:10` | Delivery App food images | *"When you order food online, you see five-star taste ratings and mouthwatering photos. But what's happening where your food is actually prepared?"* |
+| **02** | `0:10-0:20` | Dashboard Hero Screen | *"Official food safety inspection reports are buried inside dense municipal government portals—invisible to everyday consumers. Until now. Welcome to Kitchen Audit Hub."* |
+| **03** | `0:20-0:30` | Dashboard Stats & Bars | *"We transform official municipal food safety audits across Hyderabad into clear, accessible public intelligence—covering hundreds of kitchens before you spend a rupee."* |
+| **04** | `0:30-0:40` | Health Ratings 4 Cards | *"Every establishment is measured on a standardized four-tier scale: from Grade A excellent compliance down to Grade F critical safety risk."* |
+| **05** | `0:40-0:50` | 6 Safety Pillars & Steps | *"Inspectors conduct unannounced visits, rigorously evaluating food handling, temperature control, refrigeration standards, and pest management across every single kitchen."* |
+| **06** | `0:50-1:00` | Light Mode Map + Chips | *"Explore your neighborhood with our real-time interactive map. Filter by your locality with a single tap to discover verified clean kitchens near you."* |
+| **07** | `1:00-1:10` | Dark Mode Map + Popup | *"Ordering late at night? Switch effortlessly to dark mode. Tap any restaurant marker for instant health scores, distances, and full audit access."* |
+| **08** | `1:10-1:20` | Tatva 98% Detail Page | *"Here is the gold standard: Tatva Fine Dining. A verified ninety-eight percent score, zero food safety citations, and exemplary cold-chain hygiene you can trust."* |
+| **09** | `1:20-1:30` | Street Wok 56% Hero | *"Now look at Street Wok Express. Rated high for taste on food delivery apps, but Kitchen Audit Hub uncovers a failing fifty-six percent score."* |
+| **10** | `1:30-1:40` | Street Wok Violations | *"Official inspectors cited raw chicken thawing at eighty-four degrees, active rodent droppings, and severe cross-contamination. That is the truth delivery apps hide."* |
+| **11** | `1:40-1:50` | AI Summary + Alerts | *"Our built-in AI translates complex multi-page government reports into clear, three-sentence consumer summaries, while live notifications alert you to recent kitchen violations."* |
+| **12** | `1:50-2:00` | /contact + Final Logo | *"Report kitchen concerns. Verify hygiene ratings. Order food with complete confidence. Kitchen Audit Hub: Know the kitchen before you order."* |
