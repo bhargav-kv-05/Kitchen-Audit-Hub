@@ -162,5 +162,5 @@ flowchart TD
   It empowers everyday consumers to make informed, safe dining decisions—preventing foodborne illness, protecting families, and motivating restaurant owners to uphold high sanitary standards.
 
 ### 👏 Thank You | Questions & Answers
-* **Live Web App:** `kitchenaudithub.in` *(or your Vercel deployment URL)*
-* **Source Code:** `github.com/bhargav-kv-05/Kitchen-Audit-Hub`
+* **Live Web App:** `https://kitchen-audit-hub.vercel.app`
+* **Source Code:** `https://github.com/bhargav-kv-05/Kitchen-Audit-Hub`
