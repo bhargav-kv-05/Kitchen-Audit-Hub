@@ -43,10 +43,7 @@ export function RealMap({ restaurants, selectedId, onSelect, activeLocality }: R
       const L = await import('leaflet')
       if (isCancelled || !containerRef.current) return
 
-      const isDark = document.documentElement.classList.contains('dark')
-      const tileUrl = isDark
-        ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-        : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
+      const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 
       const map = L.map(containerRef.current, {
         center: HYDERABAD_CENTER,
@@ -57,7 +54,7 @@ export function RealMap({ restaurants, selectedId, onSelect, activeLocality }: R
 
       const tileLayer = L.tileLayer(tileUrl, {
         maxZoom: 19,
-        subdomains: 'abcd',
+        subdomains: ['a', 'b', 'c'],
       }).addTo(map)
 
       const markersGroup = L.layerGroup().addTo(map)
@@ -72,22 +69,6 @@ export function RealMap({ restaurants, selectedId, onSelect, activeLocality }: R
         if (e.originalEvent?.defaultPrevented) return
         onSelect(null)
       })
-
-      // Watch for theme changes (light/dark mode toggle)
-      const observer = new MutationObserver(() => {
-        const currentlyDark = document.documentElement.classList.contains('dark')
-        const newUrl = currentlyDark
-          ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-          : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
-        if (tileLayerRef.current) {
-          tileLayerRef.current.setUrl(newUrl)
-        }
-      })
-      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
-
-      return () => {
-        observer.disconnect()
-      }
     }
 
     init()
